@@ -1,13 +1,17 @@
 body {
   font-family: "Signika", sans-serif;
 }
+.container {
+  margin: 20px auto;
+  padding: 20px;
+}
 .card {
-  background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(205, 152, 235, 0.506061799719888) 0%,
-    rgba(10, 0, 255, 0.20354079131652658) 94%
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(255, 246, 236) 39.5%,
+    rgba(100, 46, 122, 0.23) 100.2%
   );
+  border: 1px solid #dadde1;
 
   max-width: 650px;
 }
@@ -23,7 +27,7 @@ h1,
 h2,
 h3 {
   margin: 20px 0 0 0;
-  color: #113f67;
+  color: #453953;
 }
 h2 {
   font-size: 25px;
@@ -37,60 +41,67 @@ h3 {
   font-style: italic;
 }
 .currently {
-  margin: 30px 0;
+  margin: 10px 0;
 }
 .current-temp {
-  font-size: 50px;
-  color: #113f67;
+  font-size: 54px;
+  color: #453953;
   font-weight: 500;
   position: relative;
   top: 10px;
 }
+.currently img {
+  width: 80px;
+}
 .celsius,
 .fah {
   font-size: 14px;
-  color: #113f67;
+  text-decoration: none;
+  color: #453953;
   font-weight: light;
   position: relative;
-  bottom: 20px;
+  top: -16px;
   cursor: pointer;
 }
 .descriptor {
   font-size: 16px;
   position: relative;
   left: 22px;
-  color: #113f67;
+  color: #453953;
 }
 .humidity {
   position: relative;
-  top: 55px;
+  top: 30px;
   font-size: 20px;
-  color: #113f67;
+  color: #453953;
 }
 .wind {
   position: relative;
-  top: 60px;
+  top: 32px;
   font-size: 20px;
-  color: #113f67;
+  color: #453953;
 }
 .forecast {
   font-size: 20px;
 
-  color: #113f67;
+  color: #453953;
   line-height: 24px;
 }
 .days {
   font-size: 20px;
   text-align: center;
+  color: #975a5e;
 }
 .icons {
   font-size: 30px;
   text-align: center;
+  color: #975a5e;
 }
 
 .temps {
   font-size: 20px;
   text-align: center;
+  color: #975a5e;
 }
 .row {
   margin: 0 0 0 10px;
