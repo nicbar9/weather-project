@@ -6,10 +6,10 @@ body {
   padding: 20px;
 }
 .card {
-  background: radial-gradient(
-    circle at 10% 20%,
-    rgb(255, 246, 236) 39.5%,
-    rgba(100, 46, 122, 0.23) 100.2%
+  background: linear-gradient(
+    90deg,
+    rgba(219, 183, 136, 0.6265099789915967) 0%,
+    rgba(255, 246, 236, 1) 100%
   );
   border: 1px solid #dadde1;
 
@@ -53,15 +53,13 @@ h3 {
 .currently img {
   width: 80px;
 }
-.celsius,
-.fah {
+#celsius,
+#fah {
   font-size: 14px;
   text-decoration: none;
-  color: #453953;
   font-weight: light;
   position: relative;
   top: -16px;
-  cursor: pointer;
 }
 .descriptor {
   font-size: 16px;
@@ -118,4 +116,13 @@ h3 {
   text-decoration: underline;
   cursor: pointer;
   transition: ease-in-out;
+}
+
+.active {
+  cursor: default;
+  color: #453953;
+}
+.active:hover {
+  text-decoration: none;
+  color: #4e415e;
 }

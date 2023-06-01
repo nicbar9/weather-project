@@ -45,30 +45,15 @@ currentDate.innerHTML = `${current}`;
 let currentTime = document.querySelector("h3");
 currentTime.innerHTML = `${time}`;
 
-function showFah(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector(".current-temp");
-  temperatureElement.innerHTML = `${Math.round(21 * 1.8 + 32)}`;
-}
-
-function showCelsius(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector(".current-temp");
-  temperatureElement.innerHTML = 21;
-}
-
-let fahrenheitLink = document.querySelector(".fah");
-fahrenheitLink.addEventListener("click", showFah);
-
-let celsiusLink = document.querySelector(".celsius");
-celsiusLink.addEventListener("click", showCelsius);
-
 function displayWeatherCondition(response) {
   console.log(response);
   let h1 = document.querySelector("h1");
   h1.innerHTML = `${response.data.name}`;
   let currentTemp = document.querySelector(".current-temp");
-  let temp = Math.round(response.data.main.temp);
+
+  celsiusTemperature = response.data.main.temp;
+
+  let temp = Math.round(celsiusTemperature);
   currentTemp.innerHTML = `${temp}`;
 
   let humidity = document.querySelector("#humidity-value");
@@ -113,6 +98,32 @@ function getCurrentPosition(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showPosition);
 }
+
+function showFah(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector(".current-temp");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  temperatureElement.innerHTML = `${Math.round(
+    (celsiusTemperature * 9) / 5 + 32
+  )}`;
+}
+
+function showCelsius(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector(".current-temp");
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
+let fahrenheitLink = document.querySelector("#fah");
+fahrenheitLink.addEventListener("click", showFah);
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", showCelsius);
+
+let celsiusTemperature = null;
 
 let currentLoc = document.querySelector("#current-loc");
 currentLoc.addEventListener("click", getCurrentPosition);
