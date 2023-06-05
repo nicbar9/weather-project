@@ -79,27 +79,36 @@ h3 {
   font-size: 20px;
   color: #453953;
 }
-.forecast {
+.weather-forecast {
   font-size: 20px;
 
   color: #453953;
   line-height: 24px;
 }
-.days {
+.weather-forecast-day {
   font-size: 20px;
   text-align: center;
-  color: #975a5e;
+  color: #453953;
 }
 .icons {
   font-size: 30px;
   text-align: center;
   color: #975a5e;
 }
-
-.temps {
-  font-size: 20px;
+.weather-forecast img {
+  display: block;
+  margin: 0 auto;
+}
+.weather-forecast-temps {
+  font-size: 16px;
   text-align: center;
-  color: #975a5e;
+  color: #453953;
+}
+.weather-forecast-temp-max {
+  color: #453953;
+}
+.weather-forecast-temp-min {
+  opacity: 0.7;
 }
 .row {
   margin: 0 0 0 10px;
