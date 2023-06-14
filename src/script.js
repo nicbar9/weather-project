@@ -121,7 +121,8 @@ function displayWeatherCondition(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
-
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   getForecast(response.data.coord);
 }
 
